@@ -1,38 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>BELLE PAROLE</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 <style>
-body, html {
-  height: 100%;
-  font-family: "Inconsolata", sans-serif;
-}
+    :root {
+      --blue: #39638a; /* Darker pastel blue */
+      --yellow: #FFD571; /* Pastel yellow */
+      --black: #000000; /* Black */
+    }
+       
+    body, html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+      background-color: var(--blue) !important; /* Set background color to black */
+      color: #FFFFFF; /* Optional: Set text color to white for contrast */
+    }
+    
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url(images/insegna.JPG);
+      min-height: 75%;
+    }
+    
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 30%;
+      height: auto;
+    }
+    
+    .menu {
+      display: none;
+    }
+    
+    .w3-top .w3-row.w3-padding {
+      background-color: var(--blue) !important; /* Use the blue variable */
+    }
+    
+    .w3-top .w3-row .w3-button {
+      background-color: var(--blue) !important; /* Use the blue variable */
+      color: #FFFFFF !important; /* White text */
+    }
+    
+    footer.w3-center {
+      background-color: var(--blue) !important; /* Use the blue variable */
+      color: #FFFFFF !important; /* White text */
+    }
+    
+    .w3-display-bottomright.w3-center.w3-padding-large {
+      color: var(--blue) !important; /* Use the blue variable */
+    }
+    
+    .w3-tag {
+      background-color: var(--yellow) !important; /* Use the yellow variable */
+      color: #000000 !important; /* Black text for better contrast */
+    }
 
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: url(images/insegna.JPG);
-  min-height: 75%;
-}
+    .instagram-container {
+        position: relative;
+        max-width: 700px;
+        margin: auto;
+        overflow: hidden;
+        background-color: #fff;
+        color: #000;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 30%;
-  height: auto;
-}
+    .instagram-posts {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
 
-.menu {
-  display: none;
-}
+    .instagram-post {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .nav-button {
+        position: absolute;
+        top: 50%;
+        background-color: var(--yellow);
+        border: none;
+        padding: 20px;
+        cursor: pointer;
+        border-radius: 100%;
+    }
+
+    .prev-button {
+        left: 10px;
+    }
+
+    .next-button {
+        right: 10px;
+    }
+    * {
+        filter: none !important; /* Remove all filters */
+    }
+
+    /* Center the container */
+    .audio-button-container {
+        position: absolute;
+        top: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 15vh; /* Full viewport height */
+    }
+
+    /* Style the button */
+    .audio-button {
+        background-color: var(--yellow);
+        border: none;
+        color: var(--black);
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .audio-button:hover {
+        background-color: #e6c55f; /* Darker yellow */
+        transform: scale(1.05);
+    }
+
+ 
+
 </style>
-</head>
+    
+        
+    </head>
 <body>
 
 <!-- Links (sit on top) -->
@@ -56,26 +166,47 @@ body, html {
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
     <img src="images/logo.png" alt="The Cafe Logo" class="logo">
+    <div class="w3-display-middle w3-center w3-padding-large audio-button-container">
+        <button id="play-audio-button" class="audio-button">BUONGIORNO</button>
+        <audio id="audio" style="display:none;">
+            <source src="audios/buongiorno_a_tutti.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
     <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-      <span class="w3-tag">Aperto tutti i giorni fino alle 23 babes </span>
+      <span class="w3-text-white">Aperto tutti i giorni fino alle 23 babes </span>
     </div>
     <div class="w3-display-bottomright w3-center w3-padding-large">
       <span class="w3-text-white">Viale Giannotti 13, 50126, Firenze</span>
     </div>
-  </header>
+</header>
+
   
 
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
 
+<script>
+    document.getElementById('play-audio-button').addEventListener('click', function() {
+        var audio = document.getElementById('audio');
+        if (audio.paused) {
+            audio.play();
+            this.textContent = "DAL FUTURO"; // Change button text to "Pause Audio"
+        } else {
+            audio.pause();
+            this.textContent = "BUONGIORNO"; // Change button text to "Play Audio"
+        }
+    });
+</script>
+
 <!-- About Container -->
 <div class="w3-container" id="about">
     <div class="w3-content" style="max-width:700px">
       <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">CHI SIAMO</span></h5>
-      <p>Siamo un associazione ARCI all'interno dello storico CIRCOLO VIE NUOVE di Firenze. Ci siamo costituiti a Dicembre '23 con l'obiettivo in mente di offrire uno spazio accessibile di socialità, inclusione, cultura. E per fare un po' di sana banda.</p>
-      <p>Se sei un' artista con un progetto in mente, uno scienziato che vuole divulgare, un'associazione che ha bisogno di uno spazio per un evento, un universitario che vuole fare due turni al bar, o se semplicemente ci vuoi scrivere una poesia d'amore, droppaci una mail a </p>
+      <p>Siamo un'associazione ARCI all'interno dello storico CIRCOLO VIE NUOVE di Firenze. Ci siamo costituiti a Dicembre '23 con l'obiettivo in mente di offrire uno spazio accessibile di socialità, inclusione, cultura. E per fare un po' di sana banda.</p>
+      <p>Se sei un'artistu con un progetto in mente, unə scienziat* che vuole divulgare, un'associazione che ha bisogno di uno spazio per un evento, un@ universitariù che vuole fare due turni al bar o se semplicemente ci vuoi scrivere una poesia d'amore, droppaci una mail a </p>
       <p><span style="font-size: 1.5em; color: #f39c12;">&#10140;</span>   <a href="mailto:belleparoleaps@gmail.com">belleparoleaps@gmail.com</a></p>
-      <p>O scrivici su Insta</p>
+      <p>o scrivici su Insta</p>
       <p><span style="font-size: 1.5em; color: #f39c12;">&#10140;</span>   <a href="https://www.instagram.com/belleparoleaps/#">belleparoleaps</a></p>
       <div class="w3-panel w3-leftbar w3-light-grey">
         <p><i>Io guarda, non per mancanza di rispetto, ma io guarda, io ti sto sempre vedendo sempre bene. Io non lo so, però forse dipende perché stai facendo una cura te per esser sempre più forte, capito, sempre meglio. Ma io t'ho visto bene anche l'altra sera t'ho visto. T'ho visto. Perché m'hanno detto che te tu sei forte m'hanno detto, e quello l'è vero. Ma che avean dubbi? EH?!</i></p>
@@ -86,6 +217,58 @@ body, html {
       <p><strong>Address:</strong> Viale Giannotti 13, 50126, Firenze</p>
     </div>
 </div>
+
+
+<!-- Instagram Posts Container -->
+<div class="w3-container" id="instagram-posts" style="padding-bottom:32px;">
+    <div class="w3-content" style="max-width:700px">
+        <p>Queste sono un po' delle robette che abbiamo combinato finora ...</p>
+        
+        <div class="instagram-container">
+            <div class="instagram-posts" id="post-slider">
+                <!-- Embed Instagram Post Example -->
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C6giydMC-TX/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C6TVwnXiE6X/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C55yyViiQ0v/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C5QXHDBCBuC/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C4tC0x1iieu/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C4sYqGgIGHx/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C4MBAQ8CBAq/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <div class="instagram-post"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C3nKwySi1MD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:700px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/XXXXXX1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"> </a></div></blockquote></div>
+                <!-- Add more embedded posts here, up to 10 -->
+            </div>
+            <button class="nav-button prev-button" onclick="prevPost()">&#10094;</button>
+            <button class="nav-button next-button" onclick="nextPost()">&#10095;</button>
+        </div>
+        <script async defer src="//www.instagram.com/embed.js"></script>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    function showPost(index) {
+        const posts = document.getElementById('post-slider');
+        const totalPosts = posts.children.length;
+        if (index >= totalPosts) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalPosts - 1;
+        } else {
+            currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        posts.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextPost() {
+        showPost(currentIndex + 1);
+    }
+
+    function prevPost() {
+        showPost(currentIndex - 1);
+    }
+</script>
 
 <!-- Menu Container -->
 <div class="w3-container" id="menu">
@@ -107,7 +290,7 @@ body, html {
       <p class="w3-text-grey">Pure un menu volevi 5.50</p><br>
     
       <h5>Ma che credi</h5>
-      <p class="w3-text-grey">Che siamoi seri 7.00</p><br>
+      <p class="w3-text-grey">Che siamo seri 7.00</p><br>
 
       <h5>Ricorda</h5>
       <p class="w3-text-grey">Sometimes two beers is dinner 10.00</p><br>
@@ -135,6 +318,10 @@ body, html {
     <p>Siamo ai circolino. <a href="https://g.co/kgs/K4cZ2Wi">Questo circolino qua.</a> L'abbiamo rifatto con le nostre manine. Guarda che boni.</p>
     <img src="images/cantiere0.jpg" class="w3-image" style="width:100%">
     <p><span class="w3-tag">MIRACCO!</span> Se vuoi fare le cose con noi ti devi tesserare!!</p>
+    <p>Vuoi essere un socio modello, farci risparmiare carta e non farci inca**are quando la prossima volta verrai a far festa da noi e avrai scordato la tessera a casa????</p>
+    <p><a href="https://portale.arci.it/preadesione/belle-parole/"><span class="w3-tag">!! PREADESIONATI QUI !!</span></a></p>
+    <p>Una volta inseriti i dati puoi venire a versare la quota associativa e venire a ritirare la tessera fisica in base. Ma almeno ce l'hai bella carina sull'app!</p>
+    
     <p><strong>FINE</strong></p>
   </div>
 </div>

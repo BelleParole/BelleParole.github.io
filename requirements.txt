@@ -1,0 +1,6 @@
+jupyter
+ipykernel
+ipywidgets
+requests 
+beautifulsoup4 
+flask
