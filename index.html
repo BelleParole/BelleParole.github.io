@@ -137,6 +137,19 @@
         transform: scale(1.05);
     }
 
+    .content-with-sticker {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust the gap as needed */
+    }
+
+    .sticker-container {
+    width: 400px; /* Adjust the size as needed */
+    height: 400px; /* Adjust the size as needed */
+    position: relative;
+    }
+
+
  
 
 </style>
@@ -199,11 +212,20 @@
     });
 </script>
 
+
 <!-- About Container -->
 <div class="w3-container" id="about">
     <div class="w3-content" style="max-width:700px">
-      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">CHI SIAMO</span></h5>
-      <p>Siamo un'associazione ARCI all'interno dello storico CIRCOLO VIE NUOVE di Firenze. Ci siamo costituiti a Dicembre '23 con l'obiettivo in mente di offrire uno spazio accessibile di socialità, inclusione, cultura. E per fare un po' di sana banda.</p>
+
+        
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">CHI SIAMO</span></h5>
+        <p>Siamo un'associazione ARCI all'interno dello storico CIRCOLO VIE NUOVE di Firenze. Ci siamo costituiti a Dicembre '23 con l'obiettivo in mente di offrire uno spazio accessibile di socialità, inclusione, cultura. E per fare un po' di sana banda.</p>
+        <div class="content-with-sticker">
+            <p>Siamo un'associazione ARCI all'interno dello storico CIRCOLO VIE NUOVE di Firenze. Ci siamo costituiti a Dicembre '23 con l'obiettivo in mente di offrire uno spazio accessibile di socialità, inclusione, cultura. E per fare un po' di sana banda.</p>
+            <div class="sticker-container">
+              <iframe src="https://giphy.com/embed/JqzFDGmh9ElmF9JDbE" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
+          </div>
       <p>Se sei un'artistu con un progetto in mente, unə scienziat* che vuole divulgare, un'associazione che ha bisogno di uno spazio per un evento, un@ universitariù che vuole fare due turni al bar o se semplicemente ci vuoi scrivere una poesia d'amore, droppaci una mail a </p>
       <p><span style="font-size: 1.5em; color: #f39c12;">&#10140;</span>   <a href="mailto:belleparoleaps@gmail.com">belleparoleaps@gmail.com</a></p>
       <p>o scrivici su Insta</p>
