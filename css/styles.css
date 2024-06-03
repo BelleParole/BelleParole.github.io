@@ -2,42 +2,68 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #333;
+    color: #fff;
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+    position: relative;
     text-align: center;
+    color: white;
 }
 
-header img {
+.header-bg {
+    background: url('images/insegna.JPG') no-repeat center center;
+    background-size: cover;
+    padding: 50px 0;
+}
+
+.logo {
     width: 150px;
 }
 
 .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
     padding: 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
+    background-color: #333;
 }
 
-h1, h2 {
+.box {
+    background-color: #f4f4f4;
     color: #333;
+    padding: 20px;
+    height: 400px; /* Make boxes taller */
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+.text-box-yellow {
+    background-color: #d4a10a;
+}
+
+.text-box-teal {
+    background-color: #30a7a1;
 }
 
 .footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     background-color: #333;
     color: white;
 }
 
-a {
-    color: #0088cc;
+.footer a {
+    color: #30a7a1;
     text-decoration: none;
 }
 
-a:hover {
+.footer a:hover {
     text-decoration: underline;
 }
