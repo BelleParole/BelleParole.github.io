@@ -1,0 +1,156 @@
+:root {
+    --blue: #39638a; /* Darker pastel blue */
+    --yellow: #FFD571; /* Pastel yellow */
+    --black: #000000; /* Black */
+}
+    
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+    background-color: var(--blue) !important; /* Set background color to black */
+    color: #FFFFFF; /* Optional: Set text color to white for contrast */
+}
+
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url(images/insegna.JPG);
+    min-height: 75%;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 30%;
+    height: auto;
+}
+
+.menu {
+    display: none;
+}
+
+.w3-top .w3-row.w3-padding {
+    background-color: var(--blue) !important; /* Use the blue variable */
+}
+
+.w3-top .w3-row .w3-button {
+    background-color: var(--blue) !important; /* Use the blue variable */
+    color: #FFFFFF !important; /* White text */
+}
+
+footer.w3-center {
+    background-color: var(--blue) !important; /* Use the blue variable */
+    color: #FFFFFF !important; /* White text */
+}
+
+.w3-display-bottomright.w3-center.w3-padding-large {
+    color: var(--blue) !important; /* Use the blue variable */
+}
+
+.w3-tag {
+    background-color: var(--yellow) !important; /* Use the yellow variable */
+    color: #000000 !important; /* Black text for better contrast */
+}
+
+.instagram-container {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-posts {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.instagram-post {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    background-color: var(--yellow);
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+* {
+    filter: none !important; /* Remove all filters */
+}
+
+/* Center the container */
+.audio-button-container {
+    position: absolute;
+    top: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh; /* Full viewport height */
+}
+
+/* Style the button */
+.audio-button {
+    background-color: var(--yellow);
+    border: none;
+    color: var(--black);
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.audio-button:hover {
+    background-color: #e6c55f; /* Darker yellow */
+    transform: scale(1.05);
+}
+
+.content-with-sticker {
+display: flex;
+align-items: center;
+gap: 0px; /* Adjust the gap as needed */
+}
+
+.sticker-container {
+width: 1000px; /* Adjust the size as needed */
+height: 100px; /* Adjust the size as needed */
+position: relative;
+}
+
+.underlined-text {
+text-decoration: underline;
+}
+
+.styled-hr {
+    border: 0;
+    height: 2px;
+    background: var(--yellow);
+    margin: 20px 0; /* Adjusts the spacing around the line */
+    width: 80%; /* Adjust the width as needed */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px; /* Optional: add rounded corners */
+}
