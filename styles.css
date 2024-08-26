@@ -182,7 +182,7 @@ text-decoration: underline;
     margin-bottom: 15px;
     display: block;
     flex-wrap: wrap;
-    width: 70%;
+    width: 85%;
     transition: 0.2s;
     padding-right: 10px;
 }
@@ -202,7 +202,8 @@ text-decoration: underline;
     background-color: var(--yellow);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     border-radius: 10px;
     padding: 0 0 !important; 
     transition: 0.5s;
@@ -231,7 +232,8 @@ text-decoration: underline;
 
 .page-name {
     font-family: Arbotek-Ultra;
-    font-size: 90px;
-    width: 70%;
+    font-size: 60px;
+    width: 80%;
     border-radius: 20px;
+    margin-bottom: 0px;
 }
