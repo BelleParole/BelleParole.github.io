@@ -216,6 +216,7 @@ text-decoration: underline;
 .menu-name {
     font-family: Arbotek-Ultra;
     text-align: left;
+    font-size: large;
 }
 
 .menu-description {
@@ -232,8 +233,18 @@ text-decoration: underline;
 
 .page-name {
     font-family: Arbotek-Ultra;
-    font-size: 60px;
-    width: 80%;
+    font-size: 50px;
+    width: 210px;
     border-radius: 20px;
     margin-bottom: 0px;
+}
+
+
+.img-gallery {
+    width: 100%;
+    transition: 0.2s;
+}
+
+.img-gallery:hover {
+    box-shadow: 0px 0px 5px black;
 }
