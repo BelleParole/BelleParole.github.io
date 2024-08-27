@@ -184,18 +184,22 @@ text-decoration: underline;
 }
 
 .menu-item {
-    font-family: "Arbotek-Thin";
+    font-family: "Arbotek-Light";
     margin: auto;
     margin-bottom: 15px;
     display: block;
     flex-wrap: wrap;
     width: 85%;
-    transition: 0.2s;
+    transition: 1s;
     padding-right: 10px;
 }
 
 .menu-item:hover {
     text-shadow: 2px 2px 5px var(--yellow);
+}
+
+.menu-item:hover .menu-name {
+    text-decoration: underline;
 }
 
 .menu-item:hover .menu-price {
@@ -263,4 +267,8 @@ text-decoration: underline;
 
 .img-container:hover {
     box-shadow: 0 0 25px var(--blue);
+}
+
+.link {
+    font-family: Arbotek-Ultra;
 }
