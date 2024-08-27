@@ -271,4 +271,9 @@ text-decoration: underline;
 
 .link {
     font-family: Arbotek-Ultra;
+    transition: 0.2s;
+}
+
+.link:hover {
+    text-shadow: 0 0 10px var(--dark-yellow);
 }
