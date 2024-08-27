@@ -193,6 +193,7 @@ text-decoration: underline;
     width: 85%;
     transition: 1s;
     padding-right: 10px;
+
 }
 
 .menu-item:hover {
@@ -226,9 +227,6 @@ text-decoration: underline;
 }
 
 .menu-name {
-    background-color: var(--light-blue);
-    border-radius: 5px;
-    padding: 2px 5px;
     font-family: Arbotek-Ultra;
     text-align: left;
     font-size: large;
