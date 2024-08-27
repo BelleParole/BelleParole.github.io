@@ -261,6 +261,7 @@ text-decoration: underline;
 }
 
 .img-container {
+    margin: 50px auto;
     box-shadow: 0 0 5px var(--blue);
     transition: 0.3s;
 }
