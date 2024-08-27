@@ -1,5 +1,6 @@
 :root {
-    --blue: #39638a; /* Darker pastel blue */
+    --blue: #39638a;
+    --light-blue: #9ab1c6;  /* Darker pastel blue */
     --yellow: #FFD571; /* Pastel yellow */
     --dark-yellow: #e6c16d;
     --black: #000000; /* Black */
@@ -225,6 +226,9 @@ text-decoration: underline;
 }
 
 .menu-name {
+    background-color: var(--light-blue);
+    border-radius: 5px;
+    padding: 2px 5px;
     font-family: Arbotek-Ultra;
     text-align: left;
     font-size: large;
