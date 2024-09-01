@@ -2,8 +2,13 @@
     --blue: #39638a;
     --light-blue: #9ab1c6;  /* Darker pastel blue */
     --yellow: #FFD571; /* Pastel yellow */
+    --yellow: #FCC75B;
     --dark-yellow: #e6c16d;
     --black: #000000; /* Black */
+    --red: #D51818;
+    --beige: #B68888;
+
+
 }
 
 @font-face {
@@ -164,7 +169,7 @@ gap: 0px; /* Adjust the gap as needed */
 }
 
 .sticker-container {
-width: 1000px; /* Adjust the size as needed */
+width: 100px; /* Adjust the size as needed */
 height: 100px; /* Adjust the size as needed */
 position: relative;
 }
@@ -296,4 +301,21 @@ text-decoration: underline;
 
 .link:hover {
     text-shadow: 0 0 10px var(--dark-yellow);
+}
+
+.box {
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.box.show {
+    transform: translateX(0);
+}
+
+.box h2 {
+    font-size: 45px;
 }

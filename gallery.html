@@ -52,11 +52,13 @@
       // Loop through and create image elements
       for (let i = 1; i <= numPhotos; i++) {
         const div = document.createElement('div');
-        div.className = 'img-gallery';
+        div.className = 'img-gallery box';
         div.innerHTML = `<img src="gallery/photo${i}.jpg" alt="Gallery Image ${i}">`;
         galleryContainer.appendChild(div);
       }
     </script>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
