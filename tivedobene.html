@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+<link rel="icon" type="image/x-icon"  href="images/logo_solo_bocca.ico">
+</head>
+<body>
+
+<p id="tivedobene">
+</p>
+
+<script>
+    var counter = 0;
+    function displayPhrase() {    
+        let phrase = "Ti vedo bene";
+        let len = phrase.length;
+
+        if (counter < len) {
+            document.getElementById('tivedobene').innerText = phrase.substring(0, ++counter) + "   !";
+            setTimeout(displayPhrase, 200);
+        } else {
+            counter = 0;
+            setTimeout(displayPhrase, 3000);
+        }
+    }
+    displayPhrase()
+</script>
+</body>
+
+</html>
+
+

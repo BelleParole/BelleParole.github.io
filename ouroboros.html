@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background with Controls</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            color: white;
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #speedControl {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        #switchVideo {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #switchVideo:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="path/to/your/video1.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <!--Insert content here-->
+    </div>
+
+    <div class="controls">
+        <input type="range" id="speedControl" min="0.1" max="2" step="0.1" value="1">
+        <button id="switchVideo">Switch Video</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const speedControl = document.getElementById('speedControl');
+        const switchButton = document.getElementById('switchVideo');
+        
+        let currentVideo = 1;
+        const videoSources = [
+            "images/ouroboros_video_fps_30_rand_noise_dimensions_(720, 1280)_model_RN50_CLIP_OPENAI_layer2_layer3_pyrsize_4_pyrratio_1.8_iter_10_lr_0.09_shift_32_smooth_0.5.mp4",
+            "images/ouroboros_video_fps_30_rand_noise_dimensions_(720, 1280)_model_RN50_CLIP_OPENAI_layer2_layer3_pyrsize_4_pyrratio_1.8_iter_10_lr_0.09_shift_32_smooth_0.5.mp4"
+        ];
+
+        speedControl.addEventListener('input', function() {
+            video.playbackRate = this.value;
+        });
+
+        switchButton.addEventListener('click', function() {
+            currentVideo = currentVideo === 0 ? 1 : 0;
+            video.src = videoSources[currentVideo];
+            video.play();
+        });
+    </script>
+</body>
+</html>

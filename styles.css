@@ -169,7 +169,7 @@ gap: 0px; /* Adjust the gap as needed */
 }
 
 .sticker-container {
-width: 100px; /* Adjust the size as needed */
+width: 500px; /* Adjust the size as needed */
 height: 100px; /* Adjust the size as needed */
 position: relative;
 }
@@ -318,4 +318,24 @@ text-decoration: underline;
 
 .box h2 {
     font-size: 45px;
+}
+
+.smongolo-link {
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--dark-yellow);
+    border-radius: 50px;
+    width: 400px;
+    margin: 50px auto;
+    font-family: Arbotek-Ultra;
+    font-size: 60px;
+}
+
+#tivedobene {
+    margin-top: 15%;
+    font-family: Arbotek-Ultra;
+    font-size: 100px;
+    text-align: center;
+    color: var(--dark-yellow);
+    text-shadow: 0 0 10px black;
 }
